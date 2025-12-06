@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*?token=*
+
+Sitemap: https://indoakurat.com/sitemap.xml

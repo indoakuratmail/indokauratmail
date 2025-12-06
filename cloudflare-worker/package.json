@@ -1,0 +1,13 @@
+{
+  "name": "indoakurat-email-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Email Worker for IndoAkurat",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
