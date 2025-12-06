@@ -31,25 +31,37 @@ This implementation plan breaks down the development of IndoAkurat into discrete
   - Create initial README with setup instructions
   - _Requirements: All requirements (foundation for entire system)_
 
-- [ ] 2. Create database schema and configure Supabase
-  - [ ] 2.1 Create emails table with proper columns and indexes
+- [x] 2. Create database schema and configure Supabase
+
+
+
+
+  - [x] 2.1 Create emails table with proper columns and indexes
+
     - Write SQL migration for emails table (id, recipient, sender, subject, body_html, body_text, created_at, expires_at, is_read, is_custom_domain)
     - Add indexes on recipient, created_at, expires_at for query performance
     - Apply migration to Supabase database
+
     - _Requirements: 6, 7, 9, 26, 28_
   
+
   - [ ] 2.2 Create attachments table with foreign key relationship
     - Write SQL migration for attachments table (id, email_id, filename, file_url, file_size, mime_type, created_at)
     - Add foreign key constraint to emails table with CASCADE delete
     - Add index on email_id for efficient queries
+
     - Apply migration to Supabase database
     - _Requirements: 10, 27_
+
   
   - [ ] 2.3 Create custom_domains_usage table for analytics
     - Write SQL migration for custom_domains_usage table (id, domain, first_seen, last_used, total_emails_received, total_sessions)
     - Add unique constraint on domain column
+
+
     - Add indexes for querying and analytics
     - Apply migration to Supabase database
+
     - _Requirements: 38_
   
   - [ ] 2.4 Configure Row Level Security (RLS) policies
@@ -57,11 +69,14 @@ This implementation plan breaks down the development of IndoAkurat into discrete
     - Create policy for public read access on emails and attachments
     - Create policy for service role insert access (Email Worker)
     - Create policy for public update (is_read field only)
+
     - Create policy for public delete access
     - Test policies with different access scenarios
     - _Requirements: 21, 25_
   
-  - [ ] 2.5 Create and configure Storage bucket for attachments
+  - [x] 2.5 Create and configure Storage bucket for attachments
+
+
     - Create "email-attachments" bucket in Supabase Storage
     - Configure bucket as public for download access
     - Set file size limit (10MB per file)

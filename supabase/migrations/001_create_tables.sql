@@ -64,14 +64,7 @@ CREATE POLICY "Service role insert only" ON emails
 
 -- Allow public to update only is_read field
 CREATE POLICY "Public update is_read" ON emails
-  FOR UPDATE USING (true)
-  WITH CHECK (
-    (OLD.recipient = NEW.recipient) AND
-    (OLD.sender = NEW.sender) AND
-    (OLD.subject = NEW.subject) AND
-    (OLD.body_html = NEW.body_html) AND
-    (OLD.body_text = NEW.body_text)
-  );
+  FOR UPDATE USING (true);
 
 -- Allow public to delete their own emails
 CREATE POLICY "Public delete" ON emails
