@@ -20,6 +20,8 @@ This implementation plan breaks down the development of IndoAkurat into discrete
 
 
 
+
+
   - Initialize Git repository and create project structure
   - Setup Supabase project and obtain API credentials (URL, anon key, service role key)
   - Configure Cloudflare account and add domains for email routing
